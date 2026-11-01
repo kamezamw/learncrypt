@@ -77,18 +77,3 @@ python benchmark.py --full --repeats 7
 
 This takes a few minutes and saves the results in the `results` folder.
 
-## Putting it online (GitHub + Streamlit Community Cloud)
-
-1. Create a free account at https://github.com, click **New repository**, name it `learncrypt`,
-   choose **Public**, and click **Create repository**.
-2. On the new repository page click **uploading an existing file**. Drag in everything inside the
-   `learncrypt` folder **except** the `.venv` folder, then click **Commit changes**.
-   (Check that `app.py`, `learn_content.py`, `requirements.txt` and the `ciphers` folder are there.)
-   The `.streamlit` folder is hidden on Linux (press `Ctrl+H` in the file manager to see it). If it did
-   not upload, click **Add file → Create new file**, type `.streamlit/config.toml` as the name, paste in
-   the contents of that file from your computer, and click **Commit changes**. Without it the app still
-   works, but uses Streamlit's default colours.
-3. Go to https://share.streamlit.io, sign in with GitHub, click **Create app**, choose the
-   `learncrypt` repository, branch `main`, main file `app.py`, and click **Deploy**.
-4. After a few minutes you get a link like `https://<something>.streamlit.app`. Open it on your
-   phone and laptop to check every page works. This is the [APP LINK] for the survey.
