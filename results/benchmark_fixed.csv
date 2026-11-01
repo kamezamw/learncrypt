@@ -1,0 +1,5 @@
+Operation,Median time (ms)
+RSA-2048 key generation,72.439
+RSA-2048 encrypt 190 bytes (OAEP),0.031
+RSA-2048 decrypt 190 bytes (OAEP),0.373
+"PBKDF2 key from password (600,000 rounds)",94.958
