@@ -3,8 +3,12 @@
 An interactive web tool for learning cryptography, built with Python and Streamlit
 (UU-COM-4005 / COM-4006 final year project).
 
-Modules:
+Every part follows three steps: a short plain-language lesson, two or three check questions,
+then the hands-on activity, which only opens when the answers are right.
 
+Parts:
+
+- **What is cryptography?**: the big idea, with everyday examples
 - **Classical ciphers**: Caesar, Vigenère and Playfair with a step-by-step view
 - **Modern cryptography**: AES-256-GCM with a password (PBKDF2), RSA-2048 encryption and signatures,
   SHA-256 with the avalanche effect, and file encryption
@@ -15,7 +19,9 @@ Modules:
 
 ```
 learncrypt/
-├── app.py                     # the Streamlit app (all pages)
+├── app.py                     # the Streamlit app (all pages, Learn → Check → Try)
+├── learn_content.py           # lesson text, check questions and glossary
+├── .streamlit/config.toml     # colours and look of the app
 ├── benchmark.py               # timing tests (also runs on its own)
 ├── ciphers/
 │   ├── classical.py           # Caesar, Vigenère, Playfair (written by hand, for teaching)
@@ -77,7 +83,11 @@ This takes a few minutes and saves the results in the `results` folder.
    choose **Public**, and click **Create repository**.
 2. On the new repository page click **uploading an existing file**. Drag in everything inside the
    `learncrypt` folder **except** the `.venv` folder, then click **Commit changes**.
-   (Check that `app.py`, `requirements.txt` and the `ciphers` folder are there.)
+   (Check that `app.py`, `learn_content.py`, `requirements.txt` and the `ciphers` folder are there.)
+   The `.streamlit` folder is hidden on Linux (press `Ctrl+H` in the file manager to see it). If it did
+   not upload, click **Add file → Create new file**, type `.streamlit/config.toml` as the name, paste in
+   the contents of that file from your computer, and click **Commit changes**. Without it the app still
+   works, but uses Streamlit's default colours.
 3. Go to https://share.streamlit.io, sign in with GitHub, click **Create app**, choose the
    `learncrypt` repository, branch `main`, main file `app.py`, and click **Deploy**.
 4. After a few minutes you get a link like `https://<something>.streamlit.app`. Open it on your
