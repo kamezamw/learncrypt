@@ -7,9 +7,7 @@ Lessons use everyday comparisons and avoid technical words where possible.
 Technical words that are needed are explained in the glossary at the bottom.
 """
 
-# ---------------------------------------------------------------------------
 # Module list: (page name, short description shown on the home page)
-# ---------------------------------------------------------------------------
 MODULES = [
     ("1. What is cryptography?", "The big idea in five minutes: messages, keys and locks."),
     ("2. Secret codes from history", "Try the codes people used hundreds of years ago."),
@@ -18,9 +16,7 @@ MODULES = [
     ("5. How fast is it?", "Compare the speed of old and modern methods."),
 ]
 
-# ---------------------------------------------------------------------------
 # Module 1: What is cryptography?
-# ---------------------------------------------------------------------------
 INTRO_LESSON = """
 **Cryptography** is the art of keeping messages secret, so that only the right person can read them.
 
@@ -36,9 +32,9 @@ Cryptography makes sure that anyone who catches it on the way sees only nonsense
 """
 
 INTRO_WORDS = [
-    ("📝", "Message", "What you want to send, for example *Meet me at 10*."),
-    ("🔑", "Key", "A secret that both people know. It is used to lock and unlock the message."),
-    ("🔒", "Locked message", "The message after it has been scrambled. Without the key it looks like nonsense, for example *Phhw ph dw 10*."),
+    ("Message", "What you want to send, for example *Meet me at 10*."),
+    ("Key", "A secret that both people know. It is used to lock and unlock the message."),
+    ("Locked message", "The message after it has been scrambled. Without the key it looks like nonsense, for example *Phhw ph dw 10*."),
 ]
 
 INTRO_LESSON_2 = """
@@ -86,9 +82,7 @@ INTRO_QUIZ = [
     },
 ]
 
-# ---------------------------------------------------------------------------
 # Module 2: Secret codes from history
-# ---------------------------------------------------------------------------
 CLASSICAL_LESSON = """
 Long before computers, people already needed to send secrets: armies, kings and traders.
 They used **codes that change letters into other letters**. Here are three famous ones.
@@ -126,9 +120,7 @@ CLASSICAL_QUIZ = [
     },
 ]
 
-# ---------------------------------------------------------------------------
 # Module 3: How old codes are broken
-# ---------------------------------------------------------------------------
 BREAKING_LESSON = """
 A code is only useful if outsiders **cannot** work out the message. The old codes fail this test
 for two simple reasons.
@@ -173,24 +165,32 @@ BREAKING_QUIZ = [
     },
 ]
 
-# ---------------------------------------------------------------------------
+# Secret messages for the Caesar code-breaking activity (Part 3).
+# The app locks one of these with a random key, so the learner has something to break.
+MYSTERY_MESSAGES = [
+    "Meet me at the old bridge tonight",
+    "The money is hidden under the blue chair",
+    "Bring the map to the market on Friday",
+    "Do not open the door before noon",
+    "The parcel arrives at the bus depot at six",
+]
+
 # Module 4: How your phone keeps secrets
-# ---------------------------------------------------------------------------
 MODERN_LESSON = """
 Today's methods are built so that the locked message looks like **random noise**, with no pattern to count.
 Your phone uses three main tools. You do not need any maths to understand the idea behind each one.
 """
 
 MODERN_CARDS = [
-    ("🔐", "AES: a shared secret key",
+    ("AES: a shared secret key",
      "Like a house key: the **same key** locks and unlocks. Here the key is made from a password you choose. "
-     "Even with the fastest computers, guessing a strong AES key would take far longer than the age of the universe. "
-     "Used by WhatsApp, Wi-Fi and bank apps to protect the message itself."),
-    ("📮", "RSA: a public padlock",
+     "A full AES key has so many possible values that no computer today can try them all, so the weak point "
+     "is usually a short or common password. AES protects the messages themselves in WhatsApp, Wi-Fi and bank apps."),
+    ("RSA: a public padlock",
      "Imagine giving everyone an **open padlock**. Anyone can snap it shut on a box for you, "
      "but only **you** have the key that opens it. The padlock is your *public key*, the key is your *private key*. "
      "It also lets you **sign** a message, like a wax seal that proves it came from you and was not changed."),
-    ("🧬", "SHA-256: a digital fingerprint",
+    ("SHA-256: a digital fingerprint",
      "Turns any message into a short **fingerprint**. The same message always gives the same fingerprint, "
      "but change one letter and the fingerprint changes completely. You cannot turn a fingerprint back into "
      "the message. Used to check that files and passwords have not been changed."),
@@ -221,9 +221,7 @@ MODERN_QUIZ = [
     },
 ]
 
-# ---------------------------------------------------------------------------
 # Module 5: How fast is it?
-# ---------------------------------------------------------------------------
 SPEED_LESSON = """
 Security is not enough on its own: your phone must also lock and unlock messages **instantly**,
 or apps would feel slow.
@@ -257,9 +255,7 @@ SPEED_QUIZ = [
     },
 ]
 
-# ---------------------------------------------------------------------------
 # Glossary
-# ---------------------------------------------------------------------------
 GLOSSARY = [
     ("Cryptography", "Keeping information secret and safe by turning it into a form only the right people can read."),
     ("Encrypt", "To lock a message so it becomes unreadable."),
