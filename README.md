@@ -1,7 +1,6 @@
 # LearnCrypt
 
-An interactive web tool for learning cryptography, built with Python and Streamlit
-(UU-COM-4005 / COM-4006 final year project).
+An interactive web tool for learning cryptography, built with Python and Streamlit.
 
 Every part follows three steps: a short plain-language lesson, two or three check questions,
 then the hands-on activity, which only opens when the answers are right.
@@ -57,7 +56,7 @@ source .venv/bin/activate
 streamlit run app.py
 ```
 
-Your browser opens at http://localhost:8501. Press `Ctrl+C` in the terminal to stop it.
+Your browser opens at http://localhost:8501.
 
 ## Running the tests
 
