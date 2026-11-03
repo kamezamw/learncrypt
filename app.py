@@ -26,7 +26,7 @@ from ciphers.cryptanalysis import (
 
 st.set_page_config(page_title="LearnCrypt", layout="centered")
 
-# Colours used by the page (kept here so they are easy to change)
+# Colours used by the page
 INK = "#23211d"
 MUTED = "#6f6a60"
 ACCENT = "#2f5d4e"      # deep green, used for buttons, links and the modern methods

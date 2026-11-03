@@ -5,7 +5,7 @@ from ciphers.cryptanalysis import (
     letter_frequencies, only_letters,
 )
 
-# A plain English sample text written for these tests.
+
 SAMPLE = (
     "Encryption is used every day when people send messages, pay with mobile money "
     "or log in to online banking. Most people do not see it working, but it protects "
