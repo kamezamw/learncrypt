@@ -38,10 +38,10 @@ Open a terminal in the `learncrypt` folder and run these lines one by one:
 
 ```bash
 # 1. Make a virtual environment (a private box for this project's packages)
-python3 -m venv .venv
+python3 -m venv venv
 
 # 2. Switch it on (do this every time you open a new terminal)
-source .venv/bin/activate
+source venv/bin/activate
 
 # 3. Install the packages
 pip install -r requirements.txt
@@ -52,7 +52,7 @@ If step 1 fails with "ensurepip is not available", run `sudo apt install python3
 ## Running the app
 
 ```bash
-source .venv/bin/activate
+source venv/bin/activate
 streamlit run app.py
 ```
 
@@ -61,7 +61,7 @@ Your browser opens at http://localhost:8501.
 ## Running the tests
 
 ```bash
-source .venv/bin/activate
+source venv/bin/activate
 python -m pytest
 ```
 
@@ -70,7 +70,7 @@ You should see `31 passed`.
 ## Running the benchmark on your own computer
 
 ```bash
-source .venv/bin/activate
+source venv/bin/activate
 python benchmark.py --full --repeats 7
 ```
 

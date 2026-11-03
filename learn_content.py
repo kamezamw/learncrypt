@@ -44,7 +44,7 @@ Anyone can carry the box, but only someone with the right key can open it and re
 **Encrypting** means putting the message in the box and locking it.
 **Decrypting** means unlocking the box and reading the message again.
 
-In this course you will move from the simple codes people used long ago, to how those codes
+In LearnCrypt you will move from the simple codes people used long ago, to how those codes
 were broken, to the strong methods that protect your phone today. Each part starts with a short
 lesson and two or three questions. When you get them right, the hands-on activity opens.
 """

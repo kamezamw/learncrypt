@@ -2,7 +2,7 @@
 LearnCrypt - main Streamlit app.
 Start it with:   streamlit run app.py
 
-Every part of the course has three steps:
+Every part of the app has three steps:
     1. Learn - a short lesson in plain language
     2. Check - a few questions, all must be right to continue
     3. Try   - the activity, which opens only after step 2
@@ -190,7 +190,7 @@ def needs_part_one():
     if "m1" in st.session_state.passed:
         return False
     st.markdown("<div class='lc-locked'>Please finish <b>Part 1: What is cryptography?</b> first. It takes about "
-                "five minutes and explains the words used in the rest of the course.</div>", unsafe_allow_html=True)
+                "five minutes and explains the words used in the rest of the app.</div>", unsafe_allow_html=True)
     st.write("")
     st.button("Go to Part 1", on_click=go, args=(lc.MODULES[0][0],), type="primary")
     return True
@@ -203,7 +203,7 @@ if page == "Introduction":
     st.title("LearnCrypt")
     st.markdown("##### How your messages, payments and passwords are kept secret, explained for everyone.")
     st.markdown(
-        "This is a short course in five parts. No computer or maths background is needed. "
+        "LearnCrypt is an application in five parts. No computer or maths background is needed. "
         "Each part begins with a short lesson. You then answer two or three questions, and when they are "
         "right, an activity opens where you can lock and unlock messages, or even break old codes yourself.")
     st.markdown("#### Contents")
@@ -213,7 +213,7 @@ if page == "Introduction":
                     unsafe_allow_html=True)
     st.write("")
     st.button("Begin with Part 1", on_click=go, args=(lc.MODULES[0][0],), type="primary")
-    st.caption("The whole course takes about 20 to 30 minutes. Progress is kept while this page stays open.")
+    st.caption("Going through all five parts takes about 20 to 30 minutes. Progress is kept while this page stays open.")
 
 # Part 1: What is cryptography?
 elif page == lc.MODULES[0][0]:
@@ -553,7 +553,7 @@ elif page == lc.MODULES[4][0]:
 
             if len(st.session_state.passed) == len(lc.MODULES):
                 st.divider()
-                st.success("You have finished all five parts of LearnCrypt. Thank you for taking the course.")
+                st.success("You have finished all five parts of LearnCrypt. Thank you for using it.")
         else:
             locked_activity()
 
