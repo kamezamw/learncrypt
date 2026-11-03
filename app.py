@@ -4,7 +4,7 @@ Start it with:   streamlit run app.py
 
 Every part of the course has three steps:
     1. Learn - a short lesson in plain language
-    2. Check - a few questions; all must be right to continue
+    2. Check - a few questions, all must be right to continue
     3. Try   - the activity, which opens only after step 2
 Lesson text and questions are in learn_content.py.
 """
