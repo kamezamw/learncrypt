@@ -91,7 +91,7 @@ def page_label(name):
 
 with st.sidebar:
     st.markdown("### LearnCrypt")
-    st.caption("A short course on how encryption works.")
+    st.caption("Understand how encryption works, explained in plain language.")
     st.radio("Contents", PAGES, key="page", format_func=page_label)
     done = len(st.session_state.passed)
     st.progress(done / len(lc.MODULES), text=f"{done} of {len(lc.MODULES)} parts finished")
