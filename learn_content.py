@@ -1,20 +1,11 @@
 """
-Lesson text and check questions for LearnCrypt.
+"How it works" text and glossary for LearnCrypt.
 
-All the words the learner reads are kept here, separate from the app code,
+All the explanations the user reads are kept here, separate from the app code,
 so they are easy to read, correct and improve without touching the logic.
 Lessons use everyday comparisons and avoid technical words where possible.
 Technical words that are needed are explained in the glossary at the bottom.
 """
-
-# Module list: (page name, short description shown on the home page)
-MODULES = [
-    ("1. What is cryptography?", "The big idea in five minutes: messages, keys and locks."),
-    ("2. Secret codes from history", "Try the codes people used hundreds of years ago."),
-    ("3. How old codes are broken", "Be the code breaker and see why old codes are not safe."),
-    ("4. How your phone keeps secrets", "The modern methods that protect WhatsApp, mobile money and banks."),
-    ("5. How fast is it?", "Compare the speed of old and modern methods."),
-]
 
 # Module 1: What is cryptography?
 INTRO_LESSON = """
@@ -44,43 +35,11 @@ Anyone can carry the box, but only someone with the right key can open it and re
 **Encrypting** means putting the message in the box and locking it.
 **Decrypting** means unlocking the box and reading the message again.
 
-In LearnCrypt you will move from the simple codes people used long ago, to how those codes
-were broken, to the strong methods that protect your phone today. Each part starts with a short
-lesson and two or three questions. When you get them right, the hands-on activity opens.
+A good path through LearnCrypt: try the **Classic ciphers**, break them in the **Code-breaking lab**,
+then see the strong methods that protect your phone in **Modern crypto**. Every tool has a
+"How it works" box if you want the idea behind it.
 """
 
-INTRO_QUIZ = [
-    {
-        "q": "What does encryption do to a message?",
-        "options": [
-            "Makes it shorter",
-            "Turns it into nonsense that only someone with the key can turn back",
-            "Deletes it after it is read",
-        ],
-        "answer": 1,
-        "explain": "Encryption scrambles the message. The key is needed to unscramble it.",
-    },
-    {
-        "q": "Which of these uses cryptography?",
-        "options": [
-            "Sending a WhatsApp message",
-            "Reading a printed newspaper",
-            "Listening to the radio",
-        ],
-        "answer": 0,
-        "explain": "WhatsApp messages are encrypted on your phone before they are sent.",
-    },
-    {
-        "q": "In our 'locked box' picture, what is the key?",
-        "options": [
-            "The message itself",
-            "The person carrying the box",
-            "The secret that locks and unlocks the box",
-        ],
-        "answer": 2,
-        "explain": "The key is the secret. Without it, the box (the locked message) stays shut.",
-    },
-]
 
 # Module 2: Secret codes from history
 CLASSICAL_LESSON = """
@@ -101,24 +60,6 @@ CLASSICAL_CARDS = [
      "Each pair of letters is swapped for another pair from the grid."),
 ]
 
-CLASSICAL_QUIZ = [
-    {
-        "q": "In a Caesar code with a move of 3, what does the letter A become?",
-        "options": ["B", "C", "D"],
-        "answer": 2,
-        "explain": "A moves three places: A → B → C → D.",
-    },
-    {
-        "q": "What makes the Vigenère code harder to read than Caesar?",
-        "options": [
-            "It uses numbers instead of letters",
-            "The move changes from letter to letter, following a keyword",
-            "It only works on short words",
-        ],
-        "answer": 1,
-        "explain": "In Caesar every letter moves the same amount. Vigenère follows a keyword, so the move keeps changing.",
-    },
-]
 
 # Module 3: How old codes are broken
 BREAKING_LESSON = """
@@ -139,33 +80,11 @@ The Vigenère code was called *"the unbreakable code"* for about 300 years. It f
 first the computer works out how long the keyword is, then it breaks each part like a Caesar code.
 
 This is the big lesson: **a good code must hide every pattern**. That is exactly what modern methods do,
-as you will see in part 4.
+as you can see in Modern crypto.
 """
 
-BREAKING_QUIZ = [
-    {
-        "q": "Why can a computer break a Caesar code so quickly?",
-        "options": [
-            "There are only 25 possible keys to try",
-            "Computers can read any language",
-            "Caesar codes are always written in capital letters",
-        ],
-        "answer": 0,
-        "explain": "With only 25 keys, a computer simply tries every one.",
-    },
-    {
-        "q": "What does frequency analysis look at?",
-        "options": [
-            "How often the message is sent",
-            "How often each letter appears",
-            "How long the message is",
-        ],
-        "answer": 1,
-        "explain": "Common letters like E and T still stand out in the locked message, and that gives the key away.",
-    },
-]
 
-# Secret messages for the Caesar code-breaking activity (Part 3).
+# Secret messages for the Caesar code-breaking lab.
 # The app locks one of these with a random key, so the learner has something to break.
 MYSTERY_MESSAGES = [
     "Meet me at the old bridge tonight",
@@ -196,30 +115,6 @@ MODERN_CARDS = [
      "the message. Used to check that files and passwords have not been changed."),
 ]
 
-MODERN_QUIZ = [
-    {
-        "q": "With AES, which key unlocks the message?",
-        "options": [
-            "The same key that locked it",
-            "Any key, as long as it is long",
-            "A key from a different person",
-        ],
-        "answer": 0,
-        "explain": "AES is like a house key: one shared secret key both locks and unlocks.",
-    },
-    {
-        "q": "With RSA, which key do you share with other people?",
-        "options": ["The private key", "The public key (the open padlock)", "Both keys"],
-        "answer": 1,
-        "explain": "You hand out open padlocks (public key) freely, and keep the key that opens them (private key) to yourself.",
-    },
-    {
-        "q": "What happens to a SHA-256 fingerprint if you change one letter of the message?",
-        "options": ["It stays the same", "Only one character changes", "It changes completely"],
-        "answer": 2,
-        "explain": "This is called the avalanche effect: a tiny change gives a totally different fingerprint.",
-    },
-]
 
 # Module 5: How fast is it?
 SPEED_LESSON = """
@@ -230,30 +125,9 @@ The old codes in this app were written step by step in simple Python, so that yo
 The modern methods come from a specialist library written in fast, carefully tested code, and many
 phones and computers even have a special part of the chip just for AES.
 
-In this part you can run a small race between the methods and see the difference for yourself.
+Run the race below and see the difference for yourself.
 """
 
-SPEED_QUIZ = [
-    {
-        "q": "Why must encryption be fast?",
-        "options": [
-            "So that apps do not feel slow when they protect your messages",
-            "Because slow encryption is easier to break",
-            "It does not need to be fast",
-        ],
-        "answer": 0,
-        "explain": "Every message, photo and payment is encrypted, so it must happen in a blink.",
-    },
-    {
-        "q": "Should you write your own encryption code for a real app?",
-        "options": [
-            "Yes, it is safer if nobody else knows how it works",
-            "No, use a well-tested library made by experts",
-        ],
-        "answer": 1,
-        "explain": "Even professional developers make mistakes with encryption. Tested libraries are much safer.",
-    },
-]
 
 # Glossary
 GLOSSARY = [

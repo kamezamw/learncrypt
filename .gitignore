@@ -3,3 +3,7 @@ __pycache__/
 .pytest_cache/
 *.pyc
 venv/
+
+# raw survey exports (keep private)
+answers*.csv
+results/survey_scores.csv
